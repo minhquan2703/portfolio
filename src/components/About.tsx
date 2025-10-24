@@ -1,30 +1,51 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import { HiSparkles } from 'react-icons/hi2';
-import { TbRainbow, TbBow } from 'react-icons/tb';
-import { FaFileDownload, FaEnvelope, FaHeart } from 'react-icons/fa';
-import { IoFlower } from 'react-icons/io5';
-import { MdPalette, MdCode } from 'react-icons/md';
-
-
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { HiSparkles } from "react-icons/hi2";
+import { TbRainbow, TbBow } from "react-icons/tb";
+import { FaFileDownload, FaEnvelope, FaHeart } from "react-icons/fa";
+import { IoFlower } from "react-icons/io5";
+import { MdPalette, MdCode } from "react-icons/md";
 
 const About = () => {
   const { t } = useTranslation();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    element?.scrollIntoView({ behavior: "smooth" });
   };
   const stats = [
-    { key: 'experience', value: `3 ${t('units.months')}`, icon: IoFlower, gradient: 'from-cute-pink to-cute-lavender' },
-    { key: 'projects', value: '3', icon: MdPalette, gradient: 'from-cute-lavender to-cute-mint' },
-    { key: 'technologies', value: '20+', icon: MdCode, gradient: 'from-cute-mint to-cute-sky' },
-    { key: 'gpa', value: '2.8', icon: FaHeart, gradient: 'from-cute-peach to-cute-pink' },
+    {
+      key: "experience",
+      value: `3 ${t("units.months")}`,
+      icon: IoFlower,
+      gradient: "from-cute-pink to-cute-lavender",
+    },
+    {
+      key: "projects",
+      value: "3",
+      icon: MdPalette,
+      gradient: "from-cute-lavender to-cute-mint",
+    },
+    {
+      key: "technologies",
+      value: "20+",
+      icon: MdCode,
+      gradient: "from-cute-mint to-cute-sky",
+    },
+    {
+      key: "gpa",
+      value: "2.8",
+      icon: FaHeart,
+      gradient: "from-cute-peach to-cute-pink",
+    },
   ];
 
   return (
-    <section className="section bg-gradient-to-b from-kawaii-100 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden" id="about">
+    <section
+      className="section bg-gradient-to-b from-kawaii-100 to-white dark:from-gray-800 dark:to-gray-900 relative overflow-hidden"
+      id="about"
+    >
       {/* Cute background decorations */}
       <div className="absolute top-20 right-10 text-8xl opacity-20 animate-float text-pink-400">
         <TbRainbow />
@@ -48,10 +69,11 @@ const About = () => {
               whileHover={{ scale: 1.05 }}
               className="inline-block px-8 py-3 bg-gradient-to-r from-cute-pink/20 to-cute-lavender/20 backdrop-blur-sm rounded-full text-primary font-bold text-base border-2 border-cute-pink/30 shadow-cute mb-4"
             >
-              {t('about.badge')}
+              {t("about.badge")}
             </motion.span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              {t('about.title')} <span className="gradient-text">{t('about.titleHighlight')}</span>
+              {t("about.title")}{" "}
+              <span className="gradient-text">{t("about.titleHighlight")}</span>
             </h2>
           </div>
 
@@ -70,16 +92,16 @@ const About = () => {
                     animate={{ scale: [1, 1.02, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
-                    {t('about.role')}
+                    {t("about.role")}
                   </motion.h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                    {t('about.description1')}
+                    {t("about.description1")}
                   </p>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
-                    {t('about.description2')}
+                    {t("about.description2")}
                   </p>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                    {t('about.description3')}
+                    {t("about.description3")}
                   </p>
                 </div>
               </div>
@@ -106,12 +128,20 @@ const About = () => {
                     <motion.div
                       className="text-5xl mb-2 text-white"
                       animate={{ rotate: [0, 10, -10, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                      transition={{
+                        duration: 3,
+                        repeat: Infinity,
+                        delay: index * 0.5,
+                      }}
                     >
                       <stat.icon />
                     </motion.div>
-                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-sm text-white/90 font-semibold">{t(`about.stats.${stat.key}`)}</div>
+                    <div className="text-3xl font-bold text-white mb-1">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-white/90 font-semibold">
+                      {t(`about.stats.${stat.key}`)}
+                    </div>
                   </motion.div>
                 ))}
               </div>
@@ -126,20 +156,20 @@ const About = () => {
               >
                 <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
                   <HiSparkles className="text-yellow-300" />
-                  {t('about.strengths')}
+                  {t("about.strengths")}
                 </h4>
                 <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <HiSparkles className="text-yellow-200" />
-                    {t('about.strengthsList.softSkills_1')}
+                    {t("about.strengthsList.softSkills_1")}
                   </li>
                   <li className="flex items-center gap-2">
                     <HiSparkles className="text-yellow-200" />
-                    {t('about.strengthsList.softSkills_2')}
+                    {t("about.strengthsList.softSkills_2")}
                   </li>
                   <li className="flex items-center gap-2">
                     <HiSparkles className="text-yellow-200" />
-                    {t('about.strengthsList.softSkills_3')}
+                    {t("about.strengthsList.softSkills_3")}
                   </li>
                 </ul>
               </motion.div>
@@ -154,23 +184,33 @@ const About = () => {
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
             <motion.a
-              href="/cv.pdf"
-              download
+              href=""
+              download="cv/CV_EN.pdf"
               whileHover={{ scale: 1.08, y: -5 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cute-pink via-cute-lavender to-cute-mint text-white px-10 py-4 rounded-full font-bold shadow-kawaii hover:shadow-glow transition-all"
             >
               <FaFileDownload />
-              {t('about.downloadCV')}
+              {t("about.downloadCV_EN")}
+            </motion.a>
+            <motion.a
+              href=""
+              download="cv/CV_VIE.pdf"
+              whileHover={{ scale: 1.08, y: -5 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cute-pink via-cute-lavender to-cute-mint text-white px-10 py-4 rounded-full font-bold shadow-kawaii hover:shadow-glow transition-all"
+            >
+              <FaFileDownload />
+              {t("about.downloadCV_VIE")}
             </motion.a>
             <motion.button
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection("contact")}
               whileHover={{ scale: 1.08, y: -5 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center justify-center gap-2 border-3 border-cute-pink bg-white dark:bg-gray-800 text-cute-pink px-10 py-4 rounded-full font-bold hover:bg-gradient-to-r hover:from-cute-pink hover:to-cute-lavender hover:text-white hover:border-transparent transition-all shadow-cute"
             >
               <FaEnvelope />
-              {t('about.contact')}
+              {t("about.contact")}
             </motion.button>
           </motion.div>
         </motion.div>
