@@ -77,11 +77,11 @@ const Skills = () => {
     { name: showMoreFESkills ? t('skills.showLess') : t('skills.showMore'), icon: showMoreFESkills ? FaMinus : FaPlus, color: 'from-gray-400 to-gray-700', description: 'MoreFE' },
   ];
   const moreBESkills = [
-    {name: 'Express.js', icon: SiExpress, color: 'from-[#000000] to-[#000000]', description: 'Web Framework' }, // Express black
-    {name: 'MySQL', icon: SiPostgresql, color: 'from-[#4479A1] to-[#4479A1]', description: 'SQL Database' }, // MySQL blue
+    {name: 'Express.js', icon: SiExpress, color: 'from-[#000000] to-[#000000]', description: 'Web Framework'},
+    {name: 'MySQL', icon: SiPostgresql, color: 'from-[#4479A1] to-[#4479A1]', description: 'SQL Database' },
   ];
   const moreToolsSkills = [
-    {name: 'Webpack', icon: VscCode, color: 'from-[#8DD6F9] to-[#8DD6F9]', description: 'Module Bundler' }, // Webpack blue
+    {name: 'Webpack', icon: VscCode, color: 'from-[#8DD6F9] to-[#8DD6F9]', description: 'Module Bundler' },
   ]
   
   const LoadMore = (category: string) => {

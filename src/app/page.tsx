@@ -14,7 +14,7 @@ export default function Home() {
   const [currentTime, setCurrentTime] = useState('');
 
   useEffect(() => {
-    // Update time every second
+  
     const updateTime = () => {
       const now = new Date();
       const timeString = now.toLocaleTimeString('vi-VN', {
@@ -26,7 +26,7 @@ export default function Home() {
       setCurrentTime(timeString);
     };
 
-    updateTime(); // Initial call
+    updateTime(); 
     const interval = setInterval(updateTime, 1000);
 
     return () => clearInterval(interval);
@@ -36,14 +36,12 @@ export default function Home() {
     <>
       <Navigation />
       <main className="relative">
-        {/* Hero Section */}
         <section className="hero-section">
           <BackgroundHome />
 
           <Overview />
         </section>
 
-        {/* Main Content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -55,7 +53,6 @@ export default function Home() {
           <Contact />
         </motion.div>
 
-        {/* Footer */}
         <footer className="bg-gray-900 text-white py-8">
           <div className="container mx-auto px-4">
             <div className="text-center">
