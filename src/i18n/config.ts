@@ -66,7 +66,8 @@ const resources = {
           softSkills_2: 'Apply logical thinking to real business cases',
           softSkills_3: 'Can communicate and read English documentation',
         },
-        downloadCV: 'Download CV',
+        downloadCV_VIE: 'Download CV (VIE)',
+        downloadCV_EN: 'Download CV (EN)',
         contact: 'Contact',
       },
       skills: {
@@ -254,7 +255,8 @@ const resources = {
           softSkills_2: 'Áp dụng tư duy phản biện vào các nghiệp vụ thực tế',
           softSkills_3: 'Có thể giao tiếp và đọc hiểu tài liệu tiếng Anh',
         },
-        downloadCV: 'Tải CV',
+        downloadCV_VIE: 'Tải CV (VIE)',
+        downloadCV_EN: 'Tải CV (EN)',
         contact: 'Liên Hệ',
       },
       skills: {
