@@ -4,11 +4,18 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { FaGithub, FaExternalLinkAlt, FaLock } from 'react-icons/fa';
 import { useState } from 'react';
+import { PiBeerSteinFill } from "react-icons/pi";
+import { MdQuiz, MdWorkHistory } from "react-icons/md";
 
 const projectColors = [
   'from-blue-500 to-cyan-500',
   'from-purple-500 to-pink-500',
   'from-green-500 to-teal-500',
+];
+const projectIcons = [
+  <PiBeerSteinFill />,
+  <MdQuiz />,
+  <MdWorkHistory />,
 ];
 
 const Projects = () => {
@@ -43,7 +50,7 @@ const Projects = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
             {projects.map((project: any, index: number) => (
               <motion.div
                 key={project.id}
@@ -59,9 +66,9 @@ const Projects = () => {
                     <div className="absolute inset-0 flex items-center justify-center">
                       <motion.div
                         whileHover={{ scale: 1.2, rotate: 10 }}
-                        className="text-white text-6xl font-bold opacity-20"
+                        className="text-white text-7xl font-bold"
                       >
-                        {index + 1}
+                        {projectIcons[index]}
                       </motion.div>
                     </div>
                   </div>
@@ -92,7 +99,7 @@ const Projects = () => {
                       onClick={() => setExpandedProject(expandedProject === project.id ? null : project.id)}
                       className="text-sm font-semibold text-primary hover:underline mb-2"
                     >
-                      {expandedProject === project.id ? '▼ Ẩn chi tiết' : '▶ Xem chi tiết'}
+                      {expandedProject === project.id ? `▼ ${t('projects.hideDetails')}` : `▶ ${t('projects.viewDetails')}`}
                     </button>
                     {expandedProject === project.id && (
                       <motion.div
@@ -101,15 +108,29 @@ const Projects = () => {
                         exit={{ opacity: 0, height: 0 }}
                         className="space-y-2 text-sm text-gray-600 dark:text-gray-400"
                       >
-                        <p className="font-semibold text-gray-700 dark:text-gray-300">Tính năng:</p>
-                        <ul className="list-disc list-inside space-y-1 text-xs">
-                          {project.features.map((feature: string, i: number) => (
-                            <li key={i}>{feature}</li>
-                          ))}
+                        <p className="font-semibold text-gray-700 dark:text-white">{t('projects.feature')}:</p>
+                        <ul className="space-y-1 text-xs">
+                          {project.features.map((feature: string, i: number) => {
+                            const isHeader = feature.trim().startsWith('-');
+                            
+                            if (isHeader) {
+                              return (
+                                <li key={i} className="text-center font-bold text-sm text-primary mt-3 mb-1 list-none">
+                                  {feature.replace('-', '').trim()}
+                                </li>
+                              );
+                            }
+                            
+                            return (
+                              <li key={i} className="list-disc list-inside ml-2 text-gray-600 dark:text-white">
+                                {feature}
+                              </li>
+                            );
+                          })}
                         </ul>
                         {project.achievements && (
                           <>
-                            <p className="font-semibold text-gray-700 dark:text-gray-300 mt-3">Kết quả:</p>
+                            <p className="font-semibold text-gray-700 dark:text-white mt-3">Kết quả:</p>
                             <ul className="list-disc list-inside space-y-1 text-xs">
                               {project.achievements.map((achievement: string, i: number) => (
                                 <li key={i}>{achievement}</li>
@@ -136,7 +157,7 @@ const Projects = () => {
                       </motion.a>
                     ) : (
                       <div className="flex-1 inline-flex items-center justify-center gap-2 bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 px-4 py-2 rounded-full text-sm font-semibold cursor-not-allowed">
-                        <FaLock /> Private
+                        <FaLock /> {t('projects.private')}
                       </div>
                     )}
                     {project.demo && (

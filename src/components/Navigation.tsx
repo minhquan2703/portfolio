@@ -92,11 +92,11 @@ const Navigation = () => {
               }}
               className="text-2xl font-bold gradient-text cursor-pointer"
             >
-              Portfolio
+              Quan's Portfolio
             </a>
           </motion.div>
 
-          {/* Desktop Navigation */}
+          {/*navigation */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}

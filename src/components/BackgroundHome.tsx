@@ -106,7 +106,7 @@ const BackgroundHome = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 -z-10"
+      className="absolute w-full h-full inset-0 -z-10"
       style={{ background: 'transparent' }}
     />
   );

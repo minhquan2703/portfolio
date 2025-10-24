@@ -8,6 +8,7 @@ import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Overview from '@/components/Overview';
+import BackgroundHome from '@/components/BackgroundHome';
 
 export default function Home() {
   const [currentTime, setCurrentTime] = useState('');
@@ -37,6 +38,8 @@ export default function Home() {
       <main className="relative">
         {/* Hero Section */}
         <section className="hero-section">
+          <BackgroundHome />
+
           <Overview />
         </section>
 
@@ -56,9 +59,9 @@ export default function Home() {
         <footer className="bg-gray-900 text-white py-8">
           <div className="container mx-auto px-4">
             <div className="text-center">
-              
+
               {/* Clock */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}

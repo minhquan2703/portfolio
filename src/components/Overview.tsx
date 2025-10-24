@@ -32,7 +32,6 @@ const Overview = () => {
 
   return (
     <div className="container relative z-10">
-      <BackgroundHome />
       <motion.div
         animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
         transition={{ duration: 4, repeat: Infinity }}
@@ -100,13 +99,20 @@ const Overview = () => {
             className="mb-8 flex justify-center"
           >
             <motion.div
-              whileHover={{ scale: 1.05, rotate: 5 }}
+              whileHover={{
+                rotate: 360,
+                transition: {
+                  repeat: Infinity,   
+                  ease: "linear",    
+                  duration: 3         
+                }
+              }}
               className="relative"
             >
               {/* Gradient Border Animation */}
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                transition={{ duration: 3, repeat: Infinity, ease: 'linear' }}
                 className="absolute -inset-2 bg-gradient-to-r from-cute-pink via-cute-lavender to-cute-mint rounded-full blur-md opacity-75"
               />
 
@@ -146,7 +152,7 @@ const Overview = () => {
             </motion.div>
           </motion.div>
           <span className="text-3xl md:text-4xl block mt-4 text-gray-600 dark:text-gray-400">
-            {t('hero.title')}
+            {t('hero.name')}
           </span>
         </motion.h1>
 
@@ -156,7 +162,7 @@ const Overview = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-2xl md:text-3xl mb-6 text-gray-600 dark:text-gray-300 font-light"
         >
-          {t('hero.subtitle')}
+          {t('hero.title')}
         </motion.h2>
 
         <motion.p
@@ -201,7 +207,7 @@ const Overview = () => {
           </motion.button>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
@@ -240,7 +246,7 @@ const Overview = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </motion.a>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </div>
   );
