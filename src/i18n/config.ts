@@ -77,6 +77,8 @@ const resources = {
         frontend: 'Frontend Development',
         backend: 'Backend Development',
         tools: 'Tools & Others',
+        showMore: 'Show More',
+        showLess: 'Show Less',
       },
       projects: {
         badge: 'Featured Projects',
@@ -263,6 +265,8 @@ const resources = {
         frontend: 'Frontend',
         backend: 'Backend',
         tools: 'Tools & Others',
+        showMore: 'Xem thêm',
+        showLess: 'Ẩn',
       },
       projects: {
         badge: 'Dự Án Nổi Bật',
